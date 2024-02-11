@@ -5,7 +5,7 @@ using JumpRings.Views;
 
 namespace JumpRings;
 
-public partial class App : Application
+public class App : Application
 {
     public override void Initialize()
     {

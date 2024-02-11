@@ -7,7 +7,12 @@ public partial class Main : Window
 {
     public Main()
     {
+        InitializeWindow();
         InitializeComponent();
+    }
+
+    private void InitializeWindow()
+    {
         Width = 800;
         Height = 600;
         MinWidth = 800;
@@ -17,18 +22,8 @@ public partial class Main : Window
         CanResize = false;
     }
 
-    public void Button1_Click(object sender, RoutedEventArgs e)
+    public void ButtonLog_Click(object sender, RoutedEventArgs e)
     {
         LogTextBox.Text += "Button 1 clicked\n";
-    }
-
-    public void Button2_Click(object sender, RoutedEventArgs e)
-    {
-        LogTextBox.Text += "Button 2 clicked\n";
-    }
-
-    public void Button3_Click(object sender, RoutedEventArgs e)
-    {
-        LogTextBox.Text += "Button 3 clicked\n";
     }
 }

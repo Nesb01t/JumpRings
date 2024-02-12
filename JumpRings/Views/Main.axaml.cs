@@ -29,7 +29,7 @@ public partial class Main : Window
     public void ButtonLog_Click(object sender, RoutedEventArgs e)
     {
         String val = "Connect Process... \n";
-        if (_processConfigurator.Connect("World of warcraft"))
+        if (_processConfigurator.Connect("Wow"))
         {
             val += "Connected to World of warcraft process! \n";
         }

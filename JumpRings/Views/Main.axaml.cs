@@ -1,10 +1,14 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using JumpRings.Models;
 
 namespace JumpRings.Views;
 
 public partial class Main : Window
 {
+    private ProcessConfigurator _processConfigurator = new();
+
     public Main()
     {
         InitializeWindow();
@@ -24,6 +28,16 @@ public partial class Main : Window
 
     public void ButtonLog_Click(object sender, RoutedEventArgs e)
     {
-        LogTextBox.Text += "Button 1 clicked\n";
+        String val = "Connect Process... \n";
+        if (_processConfigurator.Connect("World of warcraft"))
+        {
+            val += "Connected to World of warcraft process! \n";
+        }
+        else
+        {
+            val += "Failed to connect to World of warcraft process! \n";
+        }
+
+        LogTextBox.Text += val;
     }
 }

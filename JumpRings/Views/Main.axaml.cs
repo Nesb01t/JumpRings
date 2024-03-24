@@ -1,18 +1,17 @@
-using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using JumpRings.Models;
+using JumpRings.Modules;
+using JumpRings.Template;
 
 namespace JumpRings.Views;
 
 public partial class Main : Window
 {
-    private ProcessConfigurator _processConfigurator = new();
-
     public Main()
     {
         InitializeWindow();
         InitializeComponent();
+        Svc.Console = new LiteConsole(LogTextBox);
     }
 
     private void InitializeWindow()
@@ -26,18 +25,13 @@ public partial class Main : Window
         CanResize = false;
     }
 
-    public void ButtonLog_Click(object sender, RoutedEventArgs e)
+    public void ButtonClick_Connect(object sender, RoutedEventArgs e)
     {
-        String val = "Connect Process... \n";
-        if (_processConfigurator.Connect("Wow"))
-        {
-            val += "Connected to World of warcraft process! \n";
-        }
-        else
-        {
-            val += "Failed to connect to World of warcraft process! \n";
-        }
+        Intro.Button_Connect();
+    }
 
-        LogTextBox.Text += val;
+    public void ButtonClick_Execute(object sender, RoutedEventArgs e)
+    {
+        Intro.Button_Execute();
     }
 }

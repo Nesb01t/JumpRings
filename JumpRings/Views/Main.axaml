@@ -14,7 +14,8 @@
         <TabItem Header="调试">
             <DockPanel>
                 <DockPanel DockPanel.Dock="Top">
-                    <Button DockPanel.Dock="Left" Content="Log" Click="ButtonLog_Click" />
+                    <Button DockPanel.Dock="Left" Content="连接游戏" Click="ButtonClick_Connect" />
+                    <Button DockPanel.Dock="Left" Content="执行功能" Click="ButtonClick_Execute" />
                 </DockPanel>
                 <TextBox DockPanel.Dock="Bottom" x:Name="LogTextBox" IsReadOnly="True" Margin="0,10" />
             </DockPanel>
